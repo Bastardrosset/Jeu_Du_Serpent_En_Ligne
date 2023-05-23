@@ -60,8 +60,8 @@ window.onload = function(){
     ctx.strokeText("Game Over",centreX, centreY - 180);
     ctx.fillText("Game Over",centreX, centreY - 180);
     ctx.font = "bold 2rem sans-serif";
-    ctx.strokeText("Actualisez pour rejouer",centreX, centreY - 120 )
-    ctx.fillText("Actualiez pour rejouer",centreX, centreY - 120 )
+    ctx.strokeText("Enter pour rejouer",centreX, centreY - 120 )
+    ctx.fillText("Enter pour rejouer",centreX, centreY - 120 )
     ctx.restore();
    }
    function restart(){
@@ -220,7 +220,7 @@ document.onkeydown = function handleKeyDown(e){
         case 40:
             newDirection ="down";
             break;
-        case 32:
+        case 13:
             restart();
             return;
         default:
