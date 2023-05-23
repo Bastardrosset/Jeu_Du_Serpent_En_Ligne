@@ -68,7 +68,7 @@ window.onload = function(){
     snakee = new Snake([[6,4], [5,4], [4,4]],"right");
     applee = new Apple([10, 10]);
     score = 0;
-    clearTimeOut(timeOut);
+    clearTimeout(timeOut);
     refreshCanvas();
    }
    function drawScore(){
@@ -204,29 +204,28 @@ window.onload = function(){
     }
 
 
-document.onkeydown = function handleKeyDown(e){
-    var key = e.keyCode;
-    var newDirection;
-    switch(key){
-        case 37:
-            newDirection ="left";
+    document.onkeydown = function handleKeyDown(e) {
+        var key = e.key;
+        var newDirection;
+        switch (key) {
+          case "ArrowLeft":
+            newDirection = "left";
             break;
-        case 38:
-            newDirection ="up";
+          case "ArrowUp":
+            newDirection = "up";
             break;
-        case 39:
-            newDirection ="right";
+          case "ArrowRight":
+            newDirection = "right";
             break;
-        case 40:
-            newDirection ="down";
+          case "ArrowDown":
+            newDirection = "down";
             break;
-        case 13:
+          case "Enter":
             restart();
             return;
-        default:
+          default:
             return;
-    }
-    snakee.setDirection(newDirection);
-}
-
+        }
+        snakee.setDirection(newDirection);
+      };
 }
